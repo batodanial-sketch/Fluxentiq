@@ -24,7 +24,7 @@ export default function AboutSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
+          {/* Left Content */}
           <motion.div style={{ y: textY }}>
             <motion.h2
               className="font-heading font-black text-4xl md:text-5xl text-foreground leading-tight tracking-tight mb-6"
@@ -43,7 +43,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.15, duration: 0.7 }}
             >
-              At Fluxentra, we're redefining how businesses operate by integrating AI-powered automation
+              At Fluxentiq, we're redefining how businesses operate by integrating AI-powered automation
               into everyday workflows. From automating customer interactions to optimizing pipelines —
               we design intelligent systems that work smarter, faster, and more efficiently.
             </motion.p>
@@ -116,7 +116,7 @@ export default function AboutSection() {
             </motion.button>
           </motion.div>
 
-          {/* Right: parallax image */}
+          {/* Right: Parallax Image */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -130,13 +130,13 @@ export default function AboutSection() {
             >
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
-                alt="Fluxentra team"
+                alt="Fluxentiq team"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
             </motion.div>
 
-            {/* Floating cards with entrance stagger */}
+            {/* Floating cards */}
             {[
               { label: "Enterprise Clients", value: "50+", pos: "-bottom-6 -right-4" },
               { label: "Avg. Client Rating", value: "5★", pos: "-top-4 -left-4" },

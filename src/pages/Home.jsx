@@ -1,28 +1,26 @@
 import React from "react";
-import Navbar from "../components/landing/Navbar";
-import FlowLine from "../components/landing/FlowLine";
-import MouseTracker from "../components/landing/MouseTracker";
-import HeroSection from "../components/landing/HeroSection";
-import AboutSection from "../components/landing/AboutSection";
-import ApproachSection from "../components/landing/ApproachSection";
-import BenefitsSection from "../components/landing/BenefitsSection";
-import PortfolioSection from "../components/landing/PortfolioSection";
-import ServicesSection from "../components/landing/ServicesSection";
-import ResultsSection from "../components/landing/ResultsSection";
-import ProcessSection from "../components/landing/ProcessSection";
-import ContactSection from "../components/landing/ContactSection";
-import TestimonialsSection from "../components/landing/TestimonialsSection";
-import FAQSection from "../components/landing/FAQSection";
-import BlogSection from "../components/landing/BlogSection";
-import Footer from "../components/landing/Footer";
-import SectionFrame from "../components/landing/SectionFrame";
-import Marquee from "../components/landing/Marquee";
-import ScrollSkewController from "../components/landing/ScrollSkewController";
+import Navbar from "@/components/landing/Navbar";
+import FlowLine from "@/components/landing/FlowLine";
+import MouseTracker from "@/components/landing/MouseTracker";
+import HeroSection from "@/components/landing/HeroSection";
+import AboutSection from "@/components/landing/AboutSection";
+import ApproachSection from "@/components/landing/ApproachSection";
+import BenefitsSection from "@/components/landing/BenefitsSection";
+import PortfolioSection from "@/components/landing/PortfolioSection";
+import ServicesSection from "@/components/landing/ServicesSection";
+import ResultsSection from "@/components/landing/ResultsSection";
+import ProcessSection from "@/components/landing/ProcessSection";
+import ContactSection from "@/components/landing/ContactSection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import FAQSection from "@/components/landing/FAQSection";
+import BlogSection from "@/components/landing/BlogSection";
+import Footer from "@/components/landing/Footer";
+import SectionFrame from "@/components/landing/SectionFrame";
+import Marquee from "@/components/landing/Marquee";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-background">
-      <ScrollSkewController />
       <MouseTracker />
       <FlowLine />
       <Navbar />
