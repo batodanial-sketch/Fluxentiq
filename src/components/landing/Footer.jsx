@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import FluxentraLogo from "./FluxentraLogo";
 
+
 export default function Footer() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
@@ -10,8 +11,8 @@ export default function Footer() {
   return (
     <footer ref={ref} className="relative overflow-hidden border-t border-border">
       {/* Marquee */}
-      <div className="py-12 overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap flex">
+      <div className="py-12 overflow-hidden relative w-full">
+        <div className="animate-marquee whitespace-nowrap flex" style={{ width: '200%' }}>
           {Array.from({ length: 8 }).map((_, i) => (
             <motion.span
               key={i}
@@ -54,7 +55,12 @@ export default function Footer() {
               Navigation
             </div>
             <div className="space-y-3">
-              {["Services", "Results", "Process", "Contact"].map((item, i) => (
+              {[
+                "Services",
+                "Results",
+                "Process",
+                "Contact"
+              ].map((item, i) => (
                 <motion.button
                   key={item}
                   onClick={() => document.querySelector(`#${item.toLowerCase()}`)?.scrollIntoView({ behavior: "smooth" })}
@@ -99,7 +105,10 @@ export default function Footer() {
             © 2026 FLUXENTIQ. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6">
-            {["Privacy", "Terms"].map((item) => (
+            {[
+              "Privacy",
+              "Terms"
+            ].map((item) => (
               <motion.span
                 key={item}
                 whileHover={{ color: "hsl(var(--foreground))", y: -2 }}

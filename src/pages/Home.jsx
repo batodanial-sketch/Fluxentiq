@@ -17,6 +17,7 @@ import Footer from "@/components/landing/Footer";
 import SectionFrame from "@/components/landing/SectionFrame";
 import Marquee from "@/components/landing/Marquee";
 
+
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-background overflow-x-hidden">
@@ -27,15 +28,15 @@ export default function Home() {
       <HeroSection />
 
       {/* Marquee Banner */}
-      <section className="relative py-6 border-y border-border bg-background/60 backdrop-blur-sm">
+      <section className="relative py-6 border-y border-border bg-background/60 backdrop-blur-sm overflow-hidden">
         <Marquee speed={26}>
           <span className="inline-block transform -skew-x-6 font-heading font-black text-3xl md:text-6xl text-foreground/80 px-8">
-            FLUXENTIQ · AUTOMATE · ORCHESTRATE · DOMINATE · EVOLVE ·{" "}
+            FLUXENTIQ · AUTOMATE · ORCHESTRATE · DOMINATE · EVOLVE ·
           </span>
         </Marquee>
         <Marquee reverse speed={34} className="mt-3">
           <span className="inline-block transform -skew-x-6 font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground px-8">
-            Not a tool, a perspective — because Fluxentiq is everything systems could be —{" "}
+            Not a tool, a perspective — because Fluxentiq is everything systems could be —
           </span>
         </Marquee>
       </section>
