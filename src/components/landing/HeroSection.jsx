@@ -6,9 +6,17 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, Globe, Cpu, Activity, Shield, Database } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Zap,
+  Globe,
+  Cpu,
+  Activity,
+  Shield,
+  Database,
+} from "lucide-react";
 import RefractiveSphere from "./RefractiveSphere";
-import FluxentraLogo from "./FluxentraLogo";
 
 const WORDS = ["Automate.", "Orchestrate.", "Dominate.", "Evolve."];
 
@@ -68,11 +76,11 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24 pb-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-28 pb-16"
     >
       {/* Animated grid */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
@@ -83,11 +91,13 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none transition-all duration-300"
         style={{
-          background: `radial-gradient(ellipse 60% 60% at 70% 50%, rgba(93,63,211,${0.04 + scrollProgress * 0.14}) 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse 60% 60% at 70% 50%, rgba(93,63,211,${
+            0.04 + scrollProgress * 0.14
+          }) 0%, transparent 70%)`,
         }}
       />
 
-      {/* Floating particles */}
+      {/* Floating background particles */}
       {[...Array(18)].map((_, i) => (
         <motion.div
           key={i}
@@ -115,21 +125,21 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-          {/* ── Left content ── */}
+          {/* Left content */}
           <div style={{ opacity: textOpacity, transform: `translateY(${textY}px)` }}>
-
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Logo badge row */}
+              {/* Badge & System Status Row */}
               <div className="flex items-center gap-3 mb-6">
-                <FluxentraLogo size={44} animated={true} />
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                  <Cpu size={20} />
+                </div>
                 <div className="flex flex-col">
                   <motion.div
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10"
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 w-fit"
                     whileHover={{ scale: 1.04, backgroundColor: "rgba(93,63,211,0.1)" }}
                   >
                     <motion.div
@@ -142,7 +152,7 @@ export default function HeroSection() {
                       {statusLabel}
                     </span>
                   </motion.div>
-                  {/* Live system status */}
+
                   <div className="flex items-center gap-2 mt-1.5 px-1">
                     <motion.span
                       className="w-1.5 h-1.5 rounded-full bg-green-400"
@@ -156,7 +166,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Main headline with stagger */}
+              {/* Main Headline */}
               <div className="overflow-hidden">
                 <motion.h1
                   className="font-heading font-black text-foreground leading-[0.93] tracking-tight"
@@ -165,11 +175,13 @@ export default function HeroSection() {
                   animate={{ y: 0 }}
                   transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <span className="flux-skew" style={{ display: "inline-block" }}>FLUX<span className="text-primary">ENTIQ</span></span>
+                  <span className="flux-skew inline-block">
+                    FLUX<span className="text-primary">ENTIQ</span>
+                  </span>
                 </motion.h1>
               </div>
 
-              {/* Animated rotating word */}
+              {/* Rotating Word Tagline */}
               <div className="mt-3 h-12 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -178,7 +190,7 @@ export default function HeroSection() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -48, opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-heading font-black text-3xl md:text-4xl text-primary"
+                    className="font-heading font-black text-primary"
                     style={{ fontSize: "clamp(1.6rem, 3.5vw, 3rem)" }}
                   >
                     <span className="flux-skew">{WORDS[wordIdx]}</span>
@@ -197,7 +209,7 @@ export default function HeroSection() {
               </motion.p>
             </motion.div>
 
-            {/* Buttons */}
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -211,7 +223,6 @@ export default function HeroSection() {
                 animate={clicked ? { scale: [1, 1.08, 0.95, 1] } : {}}
                 className="group relative flex items-center gap-3 px-7 py-4 bg-primary text-primary-foreground font-heading font-semibold rounded-2xl overflow-hidden"
               >
-                {/* Ripple shimmer */}
                 <motion.span
                   className="absolute inset-0 bg-white/10 rounded-2xl"
                   initial={{ scaleX: 0, originX: 0 }}
@@ -229,7 +240,9 @@ export default function HeroSection() {
               </motion.button>
 
               <motion.button
-                onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })
+                }
                 whileHover={{ scale: 1.03, borderColor: "hsl(var(--primary))" }}
                 whileTap={{ scale: 0.97 }}
                 className="px-7 py-4 font-heading font-medium text-foreground rounded-2xl border border-border transition-all"
@@ -238,7 +251,7 @@ export default function HeroSection() {
               </motion.button>
             </motion.div>
 
-            {/* Stats */}
+            {/* Metric Statistics */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -249,14 +262,16 @@ export default function HeroSection() {
                 { value: "400%", label: "AVG EFFICIENCY GAIN" },
                 { value: "12K+", label: "HOURS SAVED" },
                 { value: "98%", label: "CLIENT RETENTION" },
-              ].map((stat, i) => (
+              ].map((stat) => (
                 <motion.div
                   key={stat.label}
                   whileHover={{ scale: 1.06, y: -2 }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="cursor-default"
                 >
-                  <div className="text-2xl font-heading font-black text-foreground">{stat.value}</div>
+                  <div className="text-2xl font-heading font-black text-foreground">
+                    {stat.value}
+                  </div>
                   <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground mt-1">
                     {stat.label}
                   </div>
@@ -264,7 +279,7 @@ export default function HeroSection() {
               ))}
             </motion.div>
 
-            {/* Floating tech badges */}
+            {/* Tech Badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -291,7 +306,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── Right: 3D Sphere with parallax tilt ── */}
+          {/* Right: 3D Sphere & Floating Terminal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -303,7 +318,9 @@ export default function HeroSection() {
               <div
                 className="absolute inset-0 rounded-full blur-3xl transition-all duration-500"
                 style={{
-                  background: `radial-gradient(circle, rgba(93,63,211,${0.07 + scrollProgress * 0.25}) 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, rgba(93,63,211,${
+                    0.07 + scrollProgress * 0.25
+                  }) 0%, transparent 70%)`,
                   transform: `scale(${1 + scrollProgress * 0.3})`,
                 }}
               />
@@ -312,7 +329,7 @@ export default function HeroSection() {
                 <RefractiveSphere scrollProgress={scrollProgress} />
               </div>
 
-              {/* Orbiting data chips */}
+              {/* Orbiting Chips */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
@@ -343,7 +360,7 @@ export default function HeroSection() {
                 </div>
               </motion.div>
 
-              {/* Terminal readout */}
+              {/* Terminal Readout */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -354,19 +371,25 @@ export default function HeroSection() {
                   <div className="w-2 h-2 rounded-full bg-red-400" />
                   <div className="w-2 h-2 rounded-full bg-yellow-400" />
                   <div className="w-2 h-2 rounded-full bg-green-400" />
-                  <span className="text-[8px] font-mono text-muted-foreground/60 ml-1 uppercase tracking-widest">fiq.terminal</span>
+                  <span className="text-[8px] font-mono text-muted-foreground/60 ml-1 uppercase tracking-widest">
+                    fiq.terminal
+                  </span>
                 </div>
-                {["› init llm_pipeline", "› loading embeddings...", "› status: READY ✓"].map((line, i) => (
-                  <motion.div
-                    key={line}
-                    initial={{ opacity: 0, x: -6 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.7 + i * 0.35, duration: 0.4 }}
-                    className={`text-[9px] font-mono ${i === 2 ? "text-green-400" : "text-muted-foreground/70"} leading-relaxed`}
-                  >
-                    {line}
-                  </motion.div>
-                ))}
+                {["› init llm_pipeline", "› loading embeddings...", "› status: READY ✓"].map(
+                  (line, i) => (
+                    <motion.div
+                      key={line}
+                      initial={{ opacity: 0, x: -6 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.7 + i * 0.35, duration: 0.4 }}
+                      className={`text-[9px] font-mono ${
+                        i === 2 ? "text-green-400" : "text-muted-foreground/70"
+                      } leading-relaxed`}
+                    >
+                      {line}
+                    </motion.div>
+                  )
+                )}
                 <motion.span
                   className="inline-block w-1.5 h-3 bg-primary/70 ml-0.5 rounded-sm"
                   animate={{ opacity: [1, 0, 1] }}
@@ -375,11 +398,10 @@ export default function HeroSection() {
               </motion.div>
             </div>
           </motion.div>
-
         </div>
       </div>
 
-      {/* Scroll hint */}
+      {/* Scroll Hint */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         animate={{ opacity: scrollProgress > 0.05 ? 0 : 1, y: scrollProgress > 0.05 ? 10 : 0 }}
