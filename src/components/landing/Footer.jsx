@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import FluxentraLogo from "./FluxentraLogo";
 
 
 export default function Footer() {
@@ -35,7 +34,7 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-2.5 mb-4">
-              <FluxentraLogo size={36} animated={true} />
+              <img src="/logo.png" alt="Fluxentiq Logo" className="h-9 w-9 object-contain rounded-lg" />
               <span className="font-heading font-bold text-lg tracking-tight text-foreground">
                 FLUX<span className="text-primary">ENTIQ</span>
               </span>

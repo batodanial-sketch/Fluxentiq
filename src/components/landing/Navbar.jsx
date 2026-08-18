@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import FluxentraLogo from "./FluxentraLogo";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -69,9 +68,9 @@ export default function Navbar() {
           >
             {/* Clean Logo without duplication */}
             <Link to="/" className="flex items-center gap-2.5 group">
-              <FluxentraLogo size={32} animated={false} />
+              <img src="/logo.png" alt="Fluxentiq Logo" className="h-8 w-8 object-contain rounded-lg" />
               <span className="font-heading font-black text-xl tracking-tight text-foreground">
-                FLUXENTIQ
+                FLUX<span className="text-primary">ENTIQ</span>
               </span>
             </Link>
 

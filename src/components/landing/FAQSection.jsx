@@ -88,7 +88,7 @@ export default function FAQSection() {
             <span className="flux-skew">FAQ</span>
           </h2>
           <p className="mt-4 text-base font-heading text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Everything you need to know about working with Fluxentra. Can't find your answer?{" "}
+            Everything you need to know about working with Fluxentiq. Can't find your answer?{" "}
             <button
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               className="text-primary underline underline-offset-2 hover:opacity-80 transition-opacity"
