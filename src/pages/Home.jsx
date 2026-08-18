@@ -1,31 +1,32 @@
 import React from "react";
-import Navbar from "@/components/landing/Navbar";
 import FlowLine from "@/components/landing/FlowLine";
 import MouseTracker from "@/components/landing/MouseTracker";
 import HeroSection from "@/components/landing/HeroSection";
 import AboutSection from "@/components/landing/AboutSection";
-import ApproachSection from "@/components/landing/ApproachSection";
-import BenefitsSection from "@/components/landing/BenefitsSection";
-import PortfolioSection from "@/components/landing/PortfolioSection";
 import ServicesSection from "@/components/landing/ServicesSection";
+import BenefitsSection from "@/components/landing/BenefitsSection";
+import ApproachSection from "@/components/landing/ApproachSection";
+import PortfolioSection from "@/components/landing/PortfolioSection";
 import ResultsSection from "@/components/landing/ResultsSection";
 import ProcessSection from "@/components/landing/ProcessSection";
-import ContactSection from "@/components/landing/ContactSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import BlogSection from "@/components/landing/BlogSection";
+import ContactSection from "@/components/landing/ContactSection";
 import Footer from "@/components/landing/Footer";
 import SectionFrame from "@/components/landing/SectionFrame";
 import Marquee from "@/components/landing/Marquee";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background">
+    <main className="relative min-h-screen bg-background overflow-x-hidden">
       <MouseTracker />
       <FlowLine />
-      <Navbar />
+
+      {/* Hero Section */}
       <HeroSection />
 
+      {/* Marquee Banner */}
       <section className="relative py-6 border-y border-border bg-background/60 backdrop-blur-sm">
         <Marquee speed={26}>
           <span className="flux-skew font-heading font-black text-3xl md:text-6xl text-foreground/80 px-8">
@@ -39,6 +40,7 @@ export default function Home() {
         </Marquee>
       </section>
 
+      {/* Page Sections */}
       <SectionFrame className="overflow-hidden">
         <AboutSection />
       </SectionFrame>
@@ -84,6 +86,6 @@ export default function Home() {
       </SectionFrame>
 
       <Footer />
-    </div>
+    </main>
   );
 }
