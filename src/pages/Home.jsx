@@ -29,61 +29,81 @@ export default function Home() {
       {/* Marquee Banner */}
       <section className="relative py-6 border-y border-border bg-background/60 backdrop-blur-sm">
         <Marquee speed={26}>
-          <span className="flux-skew font-heading font-black text-3xl md:text-6xl text-foreground/80 px-8">
+          <span className="inline-block transform -skew-x-6 font-heading font-black text-3xl md:text-6xl text-foreground/80 px-8">
             FLUXENTIQ · AUTOMATE · ORCHESTRATE · DOMINATE · EVOLVE ·{" "}
           </span>
         </Marquee>
         <Marquee reverse speed={34} className="mt-3">
-          <span className="flux-skew font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground px-8">
+          <span className="inline-block transform -skew-x-6 font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground px-8">
             Not a tool, a perspective — because Fluxentiq is everything systems could be —{" "}
           </span>
         </Marquee>
       </section>
 
-      {/* Page Sections */}
-      <SectionFrame className="overflow-hidden">
-        <AboutSection />
-      </SectionFrame>
+      {/* About Section */}
+      <section id="about">
+        <SectionFrame className="overflow-hidden">
+          <AboutSection />
+        </SectionFrame>
+      </section>
 
-      <SectionFrame className="overflow-hidden">
-        <ServicesSection />
-      </SectionFrame>
+      {/* Services Section */}
+      <section id="services">
+        <SectionFrame className="overflow-hidden">
+          <ServicesSection />
+        </SectionFrame>
+      </section>
 
+      {/* Benefits Section */}
       <SectionFrame className="overflow-hidden">
         <BenefitsSection />
       </SectionFrame>
 
+      {/* Approach Section */}
       <SectionFrame className="overflow-hidden">
         <ApproachSection />
       </SectionFrame>
 
-      <SectionFrame className="overflow-hidden">
-        <PortfolioSection />
-      </SectionFrame>
+      {/* Portfolio Section */}
+      <section id="portfolio">
+        <SectionFrame className="overflow-hidden">
+          <PortfolioSection />
+        </SectionFrame>
+      </section>
 
-      <SectionFrame className="overflow-hidden">
-        <ResultsSection />
-      </SectionFrame>
+      {/* Results Section */}
+      <section id="results">
+        <SectionFrame className="overflow-hidden">
+          <ResultsSection />
+        </SectionFrame>
+      </section>
 
+      {/* Process Section */}
       <SectionFrame className="overflow-hidden">
         <ProcessSection />
       </SectionFrame>
 
+      {/* Testimonials Section */}
       <SectionFrame className="overflow-hidden">
         <TestimonialsSection />
       </SectionFrame>
 
+      {/* FAQ Section */}
       <SectionFrame className="overflow-hidden">
         <FAQSection />
       </SectionFrame>
 
+      {/* Blog Section */}
       <SectionFrame className="overflow-hidden">
         <BlogSection />
       </SectionFrame>
 
-      <SectionFrame className="overflow-hidden">
-        <ContactSection />
-      </SectionFrame>
+      {/* Contact Section */}
+      <section id="contact">
+        <SectionFrame className="overflow-hidden">
+          <ContactSection />
+        </SectionFrame>
+      </section>
 
       <Footer />
     </main>
