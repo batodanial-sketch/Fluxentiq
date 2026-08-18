@@ -76,7 +76,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-28 pb-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-28 pb-16 z-10"
     >
       {/* Animated grid */}
       <div
@@ -175,7 +175,7 @@ export default function HeroSection() {
                   animate={{ y: 0 }}
                   transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <span className="flux-skew inline-block">
+                  <span className="inline-block transform -skew-x-6">
                     FLUX<span className="text-primary">ENTIQ</span>
                   </span>
                 </motion.h1>
@@ -193,7 +193,7 @@ export default function HeroSection() {
                     className="font-heading font-black text-primary"
                     style={{ fontSize: "clamp(1.6rem, 3.5vw, 3rem)" }}
                   >
-                    <span className="flux-skew">{WORDS[wordIdx]}</span>
+                    <span className="inline-block transform -skew-x-6">{WORDS[wordIdx]}</span>
                   </motion.div>
                 </AnimatePresence>
               </div>
